@@ -1,2 +1,5 @@
-# Python_small_projects
-Various python small project _ always related to spatial analysis
+### Small projects in python
+
+Various python small project, always related to spatial analysis
+
+- monte carlo simulation for a random walk
