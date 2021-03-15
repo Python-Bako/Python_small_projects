@@ -34,5 +34,33 @@ def studentDetails(student):
 
 
 def printStudents(student_list): # we are shadowing the same name, but there is no problem
-    for student in student_list:
-        studentDetails(student)
+    for i, student in enumerate(student_list):
+        print(f"ID is equal to: {i}")
+        print(student_list)
+
+
+def menu():
+
+    selection = input("Enter 'p' to print the student list, "
+                "'s' to add a new student,'a' to add a mark to the student, "
+                " or 'q' to quit: ")
+    while selection != "q": 
+        if selection == "p":
+            printStudents(student_list)
+        elif selection == "s":
+            student_list.append(create_students())
+        elif selection == 'a':
+            student_id = int(input("Enter a student ID to add mark to: "))
+            student = student_list[student_id]
+            newMark = int(input("Enter the new mark to the student: "))
+            addMarks(student, newMark)
+        else:
+            print("nothing to show here")
+        selection = input("Enter 'p' to print the student list, "
+                    "'s' to add a new student,'a' to add a mark to the student, "
+                    " or 'q' to quit: ")
+
+
+
+menu()
+
