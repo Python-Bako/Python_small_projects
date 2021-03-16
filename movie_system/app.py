@@ -1,12 +1,13 @@
-from movie import Movie
 from user import User
-
-user_a = User("Nikos")
-my_movie = Movie("The Matrix", "Sci-Fi", True)
-
-user_a.movies.append(my_movie)
-
-new_movie = user_a.add_movie("godfather","drama")
-user_a.movies.append(new_movie)
+from movie import Movie
 
 
+user = User("Nikos")
+
+user.add_movie("Matrix", "Sci-Fi")
+user.add_movie("The dictator", "Comedy")
+
+
+# Ideally, the following will create a file with the user name and the respective movies
+#user.save_to_file()
+user.load_from_file()

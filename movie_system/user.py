@@ -36,3 +36,38 @@ class User:
         # we convert it to a list to get the result we want
         return(movies_watched)
 
+
+    # save a user to a file as a csv format
+
+    def save_to_file(self):
+        with open("{}.txt".format(self.name), 'w') as f:
+            f.write(self.name + "\n")
+            for movie in self.movies:
+                f.write(movie.name + "," + movie.genre + "," + str(movie.watched) + "\n")
+
+
+    # Bako's version to load and read line by line the file
+    # def load_from_file(self):
+    #     with open("{}.txt".format(self.name),'r') as f:
+    #         line = f.readline()
+    #         cnt = 1
+    #         while line:
+    #             print("Line {}: {}".format(cnt, line.strip()))
+    #             line = f.readline()
+    #             cnt += 1
+
+    # Another version -- one more oop oriented
+    def load_from_file(self, filename):
+        with open(filename, 'r') as f:
+            content = f.readlines()
+            username = content[0]
+            movies = []
+            for line in content[1]: # this is where the written movies lie (start)
+                movie_data = line.split(',') # ['name', 'genre', 'watched']
+                movies.append(Movie(movie_data[0], movie_data[1], movie_data[2] == "True" ))
+            
+            user = User(username)
+            user.movies = movies
+
+            return user
+
