@@ -18,3 +18,7 @@ def guess(x):
     print("make a change")
 
 guess(10)
+
+
+def calc_divide(x,y):
+    return(x/y)
