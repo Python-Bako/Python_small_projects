@@ -26,3 +26,4 @@ def calc_divide(x,y):
 def subtrack(x,y):
     result = x - y
     return(result)
+    print("smth")
