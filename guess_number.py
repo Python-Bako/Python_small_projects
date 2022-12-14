@@ -22,3 +22,6 @@ guess(10)
 
 def calc_divide(x,y):
     return(x/y)
+
+def subtrack(x,y):
+    return(x-y)
